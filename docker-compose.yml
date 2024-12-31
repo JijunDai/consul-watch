@@ -1,0 +1,12 @@
+# version: "3.7"
+
+services:
+  consul:
+    image: hashicorp/consul:latest
+    ports:
+      - "8500:8500"
+      - "8600:8600/udp"
+    command: agent -dev -ui -client=0.0.0.0
+    volumes:
+      - ./consul/config:/consul/config
+      - ./consul/data:/consul/data
