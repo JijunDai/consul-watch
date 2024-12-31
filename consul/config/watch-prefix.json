@@ -1,0 +1,9 @@
+{
+  "watches": [
+    {
+      "type": "keyprefix",
+      "prefix": "myapp/config/key1",
+      "handler": "/consul/config/handler.sh"
+    }
+  ]
+}

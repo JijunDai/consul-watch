@@ -9,4 +9,4 @@ services:
     command: agent -dev -ui -client=0.0.0.0
     volumes:
       - ./consul/config:/consul/config
-      - ./consul/data:/consul/data
+      # - ./consul/data:/consul/data
