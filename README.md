@@ -1,17 +1,14 @@
-# Key features of this handler
+# Consul Watch Handler
 
-- Receives JSON data from STDIN (Consul sends this automatically)
+## Key Features
 
-- Logs changes to /var/log/consul-watch.log
+- **JSON Input**: Receives JSON data from STDIN, automatically sent by Consul.
+- **Logging**: Logs changes to `/var/log/consul-watch.log`.
+- **Detailed Logs**: Includes key name, modification index, and value in the logs.
+- **Error Handling**: Gracefully handles JSON parsing errors.
 
-- Includes key name, modification index, and value in the logs
+## Differences from Typical Go Programs
 
-- Handles JSON parsing errors gracefully
-
-- The main differences from a typical Go program are:
-
-- It reads from STDIN instead of making API calls
-
-- It processes a single batch of changes and exits (Consul will run it again when new changes occur)
-
-- It's designed to be executed by Consul's watch system rather than running continuously
+- **Input Source**: Reads from STDIN instead of making API calls.
+- **Execution Model**: Processes a single batch of changes and exits. Consul will re-execute it when new changes occur.
+- **Purpose**: Designed to be executed by Consul's watch system rather than running continuously
